@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4783659309228570641}
   - component: {fileID: 885502978}
   - component: {fileID: 536706891800027686}
-  - component: {fileID: 7267710882181706449}
+  - component: {fileID: 4380398154730503211}
   m_Layer: 0
   m_Name: Int_Cube Variant
   m_TagString: Fret 4
@@ -238,7 +238,7 @@ MonoBehaviour:
   totalCurrentColliders: 0
   Fret: {fileID: 0}
   FretLockedMat: {fileID: 0}
---- !u!114 &7267710882181706449
+--- !u!114 &4380398154730503211
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -250,4 +250,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a926163c725c18f4da5d6ad46f3fa632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fretTag: 
+  Counter: 0

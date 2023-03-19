@@ -5,8 +5,8 @@ using UnityEngine;
 public class M_FretCheck : MonoBehaviour
 {
    
-
-    public bool setFret = false;
+    public static float Counter;
+    //public bool setFret = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +17,12 @@ public class M_FretCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Counter == 4)
+        {
+            Debug.Log("bravo Dylan t'es un boss");
+            return;
+
+            // Si on a les 4 validés, fais quelque chose
+        }
     }
 }

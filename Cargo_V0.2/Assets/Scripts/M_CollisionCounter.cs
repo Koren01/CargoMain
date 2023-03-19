@@ -6,7 +6,7 @@ using TMPro;
 public class M_CollisionCounter : MonoBehaviour
 {
 
-        //PLACE ON FRET
+        //PUT ON FRET
 
     
     public int totalCollidersHit;
@@ -14,31 +14,32 @@ public class M_CollisionCounter : MonoBehaviour
     public int totalCurrentColliders;
     public GameObject Fret;
     public Material FretLockedMat;
-    private M_FretCheck boolToAccess;
-    // Start is called before the first frame update
+    private bool increment = true;
     void Start()
     {
-        boolToAccess = Fret.GetComponent<M_FretCheck>();
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         totalCurrentColliders = totalCollidersHit - totalCollidersLeft;
 
-        if (totalCurrentColliders == 4)
-        {
-            
+        if (totalCurrentColliders == 4 && increment == true)
+        { 
             Fret.GetComponent<MeshRenderer>().material = FretLockedMat;
             Fret.GetComponent<Rigidbody>().isKinematic = true;
-
-            boolToAccess.setFret = true;
-            //Fret.GetComponent<Transform>().position = Spawner.position;
-            
+            CheckIncrement();
             return;
         }
 
 
+        
+    }
+
+    void CheckIncrement ()
+    {
+        M_FretCheck.Counter++;
+        increment = false;
         return;
     }
 }
