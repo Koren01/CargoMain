@@ -11,7 +11,6 @@ public class M_FretCheck : MonoBehaviour
     void Start()
     {
         
-        
     }
 
     // Update is called once per frame
@@ -19,7 +18,7 @@ public class M_FretCheck : MonoBehaviour
     {
         if (Counter == 4)
         {
-            Debug.Log("bravo Dylan t'es un boss");
+            Debug.Log("bravo");
             return;
 
             // Si on a les 4 validés, fais quelque chose

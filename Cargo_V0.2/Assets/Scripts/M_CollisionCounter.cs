@@ -13,11 +13,13 @@ public class M_CollisionCounter : MonoBehaviour
     public int totalCollidersLeft;
     public int totalCurrentColliders;
     public GameObject Fret;
+    public Material FretSemiLockedMat;
     public Material FretLockedMat;
+    public GameObject Canvas;
     private bool increment = true;
     void Start()
     {
-
+        Canvas.SetActive(false);
     }
 
     void Update()
@@ -26,20 +28,27 @@ public class M_CollisionCounter : MonoBehaviour
 
         if (totalCurrentColliders == 4 && increment == true)
         { 
-            Fret.GetComponent<MeshRenderer>().material = FretLockedMat;
-            Fret.GetComponent<Rigidbody>().isKinematic = true;
             CheckIncrement();
             return;
-        }
-
-
-        
+        } 
     }
 
-    void CheckIncrement ()
+    public void CheckIncrement ()
     {
+        Fret.GetComponent<MeshRenderer>().material = FretSemiLockedMat;
         M_FretCheck.Counter++;
         increment = false;
+        Canvas.SetActive(true);
         return;
+    }
+
+
+    public void LockFret()
+    {
+        Fret.GetComponent<Rigidbody>().isKinematic = true;
+        Fret.GetComponent<MeshRenderer>().material = FretLockedMat;
+        Canvas.SetActive(false);
+
+
     }
 }
