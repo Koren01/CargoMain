@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4380398154730503211}
   m_Layer: 0
   m_Name: Int_Cube Variant
-  m_TagString: Fret 4
+  m_TagString: Fret 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,7 +106,7 @@ Transform:
   m_GameObject: {fileID: 4783659309228570644}
   m_LocalRotation: {x: -0, y: -0.7111371, z: 0, w: -0.7030534}
   m_LocalPosition: {x: -4.3499284, y: -1.9361999, z: -4.47607}
-  m_LocalScale: {x: 1.5923471, y: 1.9324929, z: 1.5923471}
+  m_LocalScale: {x: 1.7351032, y: 2.1057434, z: 1.7351032}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 853622048582013607}
@@ -422,6 +422,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Unity UI Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138451476757130417, guid: 58d340199ab8e0e499bfecedefe0a41c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9138451476757130422, guid: 58d340199ab8e0e499bfecedefe0a41c,
         type: 3}
