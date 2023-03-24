@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class ConveyorBelt : MonoBehaviour
 {
-    public float speed;
-    public Vector3 direction;
-    public List<GameObject> onBelt;
-    public bool move = false;
+    [SerializeField] private float speed;
+    [SerializeField] public Vector3 direction;
+    [SerializeField] private List<GameObject> onBelt;
+    [SerializeField] private bool move = false;
+    [SerializeField] private int goBack = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,7 @@ public class ConveyorBelt : MonoBehaviour
         {
             for (int i = 0; i <= onBelt.Count - 1; i++)
             {
-                onBelt[i].GetComponent<Rigidbody>().velocity = speed * direction * Time.deltaTime;
+                onBelt[i].GetComponent<Rigidbody>().velocity = goBack * speed * direction * Time.deltaTime;
             }
         }
         
@@ -29,17 +30,26 @@ public class ConveyorBelt : MonoBehaviour
 
     public void StartBelt()
     {
+        goBack = 1;
         move = true;
-        Debug.Log("bouge");
+        Debug.Log("Avance");
         return;
     }
 
     public void StopBelt()
     {
         move = false;
-        Debug.Log("bouge pas");
+        Debug.Log("Stop");
 
         return;
+    }
+
+    public void BackBelt()
+    {
+        goBack = -1;
+        move = true;
+        Debug.Log("Recule");
+
     }
 
     public void OnCollisionEnter(Collision collision)
