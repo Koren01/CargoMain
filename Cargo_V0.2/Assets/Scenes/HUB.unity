@@ -4215,7 +4215,7 @@ PrefabInstance:
     - target: {fileID: 8006517790871133682, guid: 1bef8ced40004ae4b8d2c19d31059ec5,
         type: 3}
       propertyPath: m_text
-      value: 00:00:00 time
+      value: 00:00:00
       objectReference: {fileID: 0}
     - target: {fileID: 8092449588991230964, guid: 1bef8ced40004ae4b8d2c19d31059ec5,
         type: 3}
