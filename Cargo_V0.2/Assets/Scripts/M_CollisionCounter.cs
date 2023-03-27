@@ -15,12 +15,14 @@ public class M_CollisionCounter : MonoBehaviour
     public GameObject Fret;
     public Material FretSemiLockedMat;
     public Material FretLockedMat;
-    public GameObject Canvas;
+    public GameObject CanvasLock;
+    public GameObject CanvasUnlock;
     private bool increment = true;
     private Material baseMat;
+    //private bool locked = false;
     void Start()
     {
-        Canvas.SetActive(false);
+        CanvasLock.SetActive(false);
         baseMat = Fret.GetComponent<MeshRenderer>().material;
     }
 
@@ -32,25 +34,29 @@ public class M_CollisionCounter : MonoBehaviour
         {
             Fret.GetComponent<MeshRenderer>().material = FretSemiLockedMat;
             CheckIncrement();
-
             return;
         }
     }
 
     public void CheckIncrement()
     {
-        Canvas.SetActive(true);
-        increment = false;
-        return;
+        
+            CanvasLock.SetActive(true);
+            increment = false;
+            return;
+        
+        
     }
 
 
     public void LockFret()
     {
+        
         Fret.GetComponent<Rigidbody>().isKinematic = true;
         Fret.GetComponent<MeshRenderer>().material = FretLockedMat;
         M_FretCheck.Counter++;
-        Canvas.SetActive(false);
+        CanvasLock.SetActive(false);
+        CanvasUnlock.SetActive(true);
         increment = false;
         return;
 
@@ -61,8 +67,20 @@ public class M_CollisionCounter : MonoBehaviour
     public void UndoCheck()
     {
         Fret.GetComponent<MeshRenderer>().material = baseMat;
-        Canvas.SetActive(false);
+        CanvasLock.SetActive(false);
+        CanvasUnlock.SetActive(false);
         increment = true;
         return;
+    }
+
+
+    public void Unlock()
+    {
+        Fret.GetComponent<MeshRenderer>().material = baseMat;
+        Fret.GetComponent<Rigidbody>().isKinematic = false;
+        CanvasUnlock.SetActive(false);
+        return;
+
+
     }
 }
