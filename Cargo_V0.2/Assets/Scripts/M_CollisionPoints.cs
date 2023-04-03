@@ -9,7 +9,6 @@ public class  M_CollisionPoints : MonoBehaviour
 
     //PLACE ON PLANE/COLLIDERS
 
-    public string fretTag;
     void Start()
     {
         
@@ -23,7 +22,7 @@ public class  M_CollisionPoints : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(fretTag))
+        if (other.CompareTag("Fret"))
         {
             M_CollisionCounter count1 = other.gameObject.GetComponent<M_CollisionCounter>();
             count1.totalCollidersHit += 1;
@@ -36,7 +35,7 @@ public class  M_CollisionPoints : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag(fretTag)) 
+        if (other.CompareTag("Fret")) 
         {
             M_CollisionCounter count2 = other.gameObject.GetComponent<M_CollisionCounter>();
             count2.totalCollidersLeft += 1;

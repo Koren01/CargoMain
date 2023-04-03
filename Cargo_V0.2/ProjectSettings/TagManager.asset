@@ -9,6 +9,7 @@ TagManager:
   - Fret 2
   - Fret 3
   - Fret 4
+  - Fret
   layers:
   - Default
   - TransparentFX

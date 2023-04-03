@@ -96,8 +96,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10.065153, y: 51.76058, z: 11.254916}
-  m_Center: {x: -0.032580633, y: 25.352215, z: -0.6274598}
+  m_Size: {x: 21.154764, y: 51.760582, z: 26.767561}
+  m_Center: {x: -0.4949006, y: 25.352217, z: -1.5804734}
 --- !u!114 &3761561823577939835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,7 +110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60da64f6f15584d4089356346a68aaf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fretTag: 
 --- !u!1 &6164748029209698250
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,8 +206,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 11.412199, y: 51.158493, z: 10.738354}
-  m_Center: {x: -0.7061014, y: 25.051199, z: -0.9968208}
+  m_Size: {x: 24.137503, y: 51.15849, z: 26.342167}
+  m_Center: {x: 0.6661383, y: 25.051199, z: -0.3696866}
 --- !u!114 &2887397052867414127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60da64f6f15584d4089356346a68aaf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fretTag: 
 --- !u!1 &6164748029447502030
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,8 +435,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 48.958004, z: 11.382294}
-  m_Center: {x: -0.0000018865451, y: 23.950972, z: -0.6452298}
+  m_Size: {x: 17.569258, y: 48.958004, z: 19.676321}
+  m_Center: {x: -0.08960129, y: 23.950975, z: 0.4436432}
 --- !u!114 &126813937343157857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,7 +449,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60da64f6f15584d4089356346a68aaf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fretTag: 
 --- !u!1 &6164748030488931560
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,8 +545,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 11.527664, y: 41.794582, z: 11.40612}
-  m_Center: {x: -0.023182495, y: 20.369226, z: 1.3703058}
+  m_Size: {x: 21.753933, y: 41.794586, z: 27.367756}
+  m_Center: {x: 1.0734801, y: 20.369226, z: 0.7468244}
 --- !u!114 &3465854101395456304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,4 +559,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60da64f6f15584d4089356346a68aaf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fretTag: 
