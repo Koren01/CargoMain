@@ -23,6 +23,10 @@ public class TabletTime : MonoBehaviour
     public int seconds;
     public float startTime = 0.0f;
 
+    public AudioClip victory;
+    public AudioSource soundSource;
+    public int alreadyPlayed = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +53,13 @@ public class TabletTime : MonoBehaviour
         if(startTimer == false && levelEnded == true)
         {
             display1VS.SetText("Congratulations! Your timer is: ");
+
+            if (!soundSource.isPlaying && alreadyPlayed <= 0)
+            {
+                soundSource.clip = victory;
+                soundSource.Play();
+                alreadyPlayed++;
+            }
         }
         
     }
