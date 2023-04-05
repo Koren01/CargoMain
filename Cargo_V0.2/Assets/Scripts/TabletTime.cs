@@ -6,13 +6,23 @@ using TMPro;
 
 public class TabletTime : MonoBehaviour
 {
-    public  TMP_Text theDisplay;
-    public TMP_Text timerText;
+    public  TMP_Text display1;
+    public  TMP_Text display1VS;
+    public  TMP_Text display2;
+    public  TMP_Text display3;
+
+    public TMP_Text timerText1;
+    public TMP_Text timerText2;
+    public TMP_Text timerText3;
+
     public bool startTimer;
+    public bool levelEnded;
+
     public int hour;
     public int minutes;
     public int seconds;
     public float startTime = 0.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,10 +36,19 @@ public class TabletTime : MonoBehaviour
         minutes = System.DateTime.Now.Minute;
         seconds = System.DateTime.Now.Second;
 
-        theDisplay.GetComponent<TMP_Text>().text = hour + ":" + minutes + ":" + seconds;
-        if (startTimer == true)
+        display1.GetComponent<TMP_Text>().text = hour + ":" + minutes + ":" + seconds;
+        display2.GetComponent<TMP_Text>().text = hour + ":" + minutes + ":" + seconds;
+        display3.GetComponent<TMP_Text>().text = hour + ":" + minutes + ":" + seconds;
+        if (startTimer == true )
         {
-            timerText.SetText("" + Mathf.Round(Time.time - startTime) + "s");
+            timerText1.SetText("" + Mathf.Round(Time.time - startTime) + "s");
+            timerText2.SetText("" + Mathf.Round(Time.time - startTime) + "s");
+            timerText3.SetText("" + Mathf.Round(Time.time - startTime) + "s");
+        }
+
+        if(startTimer == false && levelEnded == true)
+        {
+            display1VS.SetText("Congratulations! Your timer is: ");
         }
         
     }
@@ -39,4 +58,6 @@ public class TabletTime : MonoBehaviour
         startTimer = true;
         startTime = Time.time;
     }
+
+    
 }
