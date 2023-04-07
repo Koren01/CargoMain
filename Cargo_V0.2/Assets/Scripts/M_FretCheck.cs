@@ -1,21 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class M_FretCheck : MonoBehaviour
 {
-   
+    // on controller
+
     public static float Counter;
+    public static float Remaining;
+
+    public float UldsToLoad = 1;
+
+    public TMP_Text UldsLeftMonitor;
+    public TMP_Text UldsLeftWatch;
     public TabletTime controller;
-    
+    private void Start()
+    {
+        {
+            Remaining = UldsToLoad;
+
+        }
+    }
+
     void Update()
     {
-        // ici on a = 4 car il faut double cliquer pour le verouillage d'uld, ce qui fait que la validation et le compte se font 2x
-        if (Counter == 2)
+
+        UldsLeftMonitor.SetText("Remaining ULDs: " + Remaining);
+        UldsLeftWatch.SetText("Remaining ULDs: " + Remaining);
+
+        if (Counter == UldsToLoad)
         {
             Debug.Log("BRAVO");
             controller.startTimer = false;
             controller.levelEnded = true;
+
             
 
             return;

@@ -25,23 +25,19 @@ public class M_CollisionCounter : MonoBehaviour
         CanvasLock.SetActive(false);
         baseMat = Fret.GetComponent<MeshRenderer>().material;
     }
-    
+
     void FixedUpdate()
     {
         totalCurrentColliders = totalCollidersHit - totalCollidersLeft;
 
-        
+
         if (totalCurrentColliders == 4 && increment == true)
         {
             Fret.GetComponent<MeshRenderer>().material = FretSemiLockedMat;
+            increment = false;
             CanvasLock.SetActive(true);
 
-            
-        } 
-        else if (totalCurrentColliders != 4 && increment == true)
-        {
-            Fret.GetComponent<MeshRenderer>().material = baseMat;
-            CanvasOff();
+            return;
         }
     }
 
@@ -68,14 +64,13 @@ public class M_CollisionCounter : MonoBehaviour
 
     public void LockFret()
     {
-        
+
         Fret.GetComponent<Rigidbody>().isKinematic = true;
         Fret.GetComponent<MeshRenderer>().material = FretLockedMat;
 
         Debug.Log("Fret counter +1");
         M_FretCheck.Counter++;
         M_FretCheck.Remaining--;
-        increment = false;
         CanvasLocked();
 
 
@@ -87,20 +82,20 @@ public class M_CollisionCounter : MonoBehaviour
         Fret.GetComponent<Rigidbody>().isKinematic = false;
 
         Debug.Log("Fret counter -1");
-        M_FretCheck.Counter--;
+        M_FretCheck.Counter = -2;
         M_FretCheck.Remaining++;
-        increment = true;
         CanvasUnlocked();
 
 
     }
     public void UndoCheck()
     {
-        
-        
-       
+        Fret.GetComponent<MeshRenderer>().material = baseMat;
+        CanvasOff();
+        increment = true;
+        return;
     }
 
 
-    
+
 }

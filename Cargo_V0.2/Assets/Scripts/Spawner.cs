@@ -21,6 +21,6 @@ public class Spawner : MonoBehaviour
 
     public void SpawnObject()
     {
-        GameObject newObject = Instantiate(FretToSpawn, Transform.transform.position, Quaternion.Euler(0, 268, 0));
+        GameObject newObject = Instantiate(FretToSpawn, Transform.transform.position, Quaternion.Euler(0, 270, 0));
     }
 }
