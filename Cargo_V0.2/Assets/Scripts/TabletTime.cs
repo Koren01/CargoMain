@@ -24,13 +24,17 @@ public class TabletTime : MonoBehaviour
     public float startTime = 0.0f;
 
     public AudioClip victory;
-    public AudioSource soundSource;
+    public AudioSource VictorySoundSource;
+    public AudioSource BGMSoundSource;
     public int alreadyPlayed = 0;
+
+    public GameObject ULDLayout;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        ULDLayout.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -48,17 +52,23 @@ public class TabletTime : MonoBehaviour
             timerText1.SetText("" + Mathf.Round(Time.time - startTime) + "s");
             timerText2.SetText("" + Mathf.Round(Time.time - startTime) + "s");
             timerText3.SetText("" + Mathf.Round(Time.time - startTime) + "s");
+
+            ULDLayout.SetActive(true);
         }
 
         if(startTimer == false && levelEnded == true)
         {
             display1VS.SetText("Congratulations! Your timer is: ");
+            ULDLayout.SetActive(false);
 
-            if (!soundSource.isPlaying && alreadyPlayed <= 0)
+            if (!VictorySoundSource.isPlaying && alreadyPlayed <= 0)
             {
-                soundSource.clip = victory;
-                soundSource.Play();
+                BGMSoundSource.Pause();
+                VictorySoundSource.clip = victory;
+                VictorySoundSource.Play();
                 alreadyPlayed++;
+                
+
             }
         }
         
