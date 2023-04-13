@@ -43,7 +43,6 @@ public class  M_CollisionPoints : MonoBehaviour
             Debug.Log("1 collider less");
             Debug.Log(count2.totalCollidersLeft);
 
-          // count2.UndoCheck();
         }
         
 

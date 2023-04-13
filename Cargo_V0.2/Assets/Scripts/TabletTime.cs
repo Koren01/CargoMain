@@ -30,7 +30,7 @@ public class TabletTime : MonoBehaviour
 
     public GameObject ULDLayout;
 
-    public bool mybool2 = false;
+    public bool mybool = false;
 
 
 
@@ -81,7 +81,7 @@ public class TabletTime : MonoBehaviour
     {
         startTimer = true;
         startTime = Time.time;
-        mybool2 = true;
+        mybool = true;
       
     }
 

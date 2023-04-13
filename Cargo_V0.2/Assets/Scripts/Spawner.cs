@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour
 
     public bool spawn = false;
     public bool Enabled = false;
-    public GameObject Getter;
+    public GameObject Controller;
 
     void Start()
     {
@@ -18,7 +18,7 @@ public class Spawner : MonoBehaviour
 
     void Update()
     {
-        Enabled = Getter.GetComponent<TabletTime>().mybool2;
+        Enabled = Controller.GetComponent<TabletTime>().mybool;
 
     }
 
