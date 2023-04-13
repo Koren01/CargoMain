@@ -30,14 +30,17 @@ public class TabletTime : MonoBehaviour
 
     public GameObject ULDLayout;
 
-    // Start is called before the first frame update
+    public bool mybool2 = false;
+
+
+
     void Start()
     {
         ULDLayout.SetActive(false);
+        
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         hour = System.DateTime.Now.Hour;
@@ -78,6 +81,8 @@ public class TabletTime : MonoBehaviour
     {
         startTimer = true;
         startTime = Time.time;
+        mybool2 = true;
+      
     }
 
     
