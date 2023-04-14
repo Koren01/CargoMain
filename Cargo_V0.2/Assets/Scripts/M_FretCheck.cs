@@ -25,9 +25,16 @@ public class M_FretCheck : MonoBehaviour
 
     void Update()
     {
+        if (UldsLeftMonitor)
+        {
+            UldsLeftMonitor.SetText("Remaining ULDs: " + Remaining);
 
-        UldsLeftMonitor.SetText("Remaining ULDs: " + Remaining);
-        UldsLeftWatch.SetText("Remaining ULDs: " + Remaining);
+        }
+        if (UldsLeftWatch)
+        {
+            UldsLeftWatch.SetText("Remaining ULDs: " + Remaining);
+
+        }
 
         if (Counter == UldsToLoad)
         {

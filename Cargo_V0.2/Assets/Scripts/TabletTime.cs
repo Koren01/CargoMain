@@ -46,23 +46,58 @@ public class TabletTime : MonoBehaviour
         hour = System.DateTime.Now.Hour;
         minutes = System.DateTime.Now.Minute;
         seconds = System.DateTime.Now.Second;
+        if (display1)
+        {
+            display1.GetComponent<TMP_Text>().text = hour + ":" + minutes + ":" + seconds;
 
-        display1.GetComponent<TMP_Text>().text = hour + ":" + minutes + ":" + seconds;
-        display2.GetComponent<TMP_Text>().text = hour + ":" + minutes + ":" + seconds;
-        display3.GetComponent<TMP_Text>().text = hour + ":" + minutes + ":" + seconds;
+        }
+        if (display2)
+        {
+            display2.GetComponent<TMP_Text>().text = hour + ":" + minutes + ":" + seconds;
+
+        }
+        if (display3)
+        {
+            display3.GetComponent<TMP_Text>().text = hour + ":" + minutes + ":" + seconds;
+
+        }
         if (startTimer == true )
         {
-            timerText1.SetText("" + Mathf.Round(Time.time - startTime) + "s");
-            timerText2.SetText("" + Mathf.Round(Time.time - startTime) + "s");
-            timerText3.SetText("" + Mathf.Round(Time.time - startTime) + "s");
+            if (timerText1)
+            {
+                timerText1.SetText("" + Mathf.Round(Time.time - startTime) + "s");
 
-            ULDLayout.SetActive(true);
+            }
+            if (timerText2)
+            {
+                timerText2.SetText("" + Mathf.Round(Time.time - startTime) + "s");
+
+            }
+            if (timerText3)
+            {
+                timerText3.SetText("" + Mathf.Round(Time.time - startTime) + "s");
+
+            }
+
+            if (ULDLayout)
+            {
+                ULDLayout.SetActive(true);
+
+            }
         }
 
         if(startTimer == false && levelEnded == true)
         {
-            display1VS.SetText("Congratulations! Your timer is: ");
-            ULDLayout.SetActive(false);
+            if (display1VS)
+            {
+                display1VS.SetText("Congratulations! Your timer is: ");
+
+            }
+            if(ULDLayout)
+            {
+                ULDLayout.SetActive(false);
+
+            }
 
             if (!VictorySoundSource.isPlaying && alreadyPlayed <= 0)
             {
