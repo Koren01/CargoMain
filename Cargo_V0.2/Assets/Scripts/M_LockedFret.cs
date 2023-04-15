@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class M_CollisionCounter : MonoBehaviour
+public class M_LockedFret : MonoBehaviour
 {
 
     //PUT ON FRET
@@ -13,6 +13,7 @@ public class M_CollisionCounter : MonoBehaviour
     public int totalCollidersLeft;
     public int totalCurrentColliders;
     public GameObject Fret;
+    public GameObject FretForMat;
     public Material FretSemiLockedMat;
     public Material FretLockedMat;
     public GameObject CanvasLock;
@@ -22,22 +23,23 @@ public class M_CollisionCounter : MonoBehaviour
 
     void Start()
     {
-        CanvasLock.SetActive(false);
-        baseMat = Fret.GetComponent<MeshRenderer>().material;
+        LockFret();
+        baseMat = FretForMat.GetComponent<MeshRenderer>().material;
+
     }
-    
+
     void FixedUpdate()
     {
         totalCurrentColliders = totalCollidersHit - totalCollidersLeft;
 
-        
+
         if (totalCurrentColliders == 4 && increment == true)
         {
             Fret.GetComponent<MeshRenderer>().material = FretSemiLockedMat;
             CanvasLock.SetActive(true);
 
-            
-        } 
+
+        }
         else if (totalCurrentColliders != 4 && increment == true)
         {
             Fret.GetComponent<MeshRenderer>().material = baseMat;
@@ -68,14 +70,13 @@ public class M_CollisionCounter : MonoBehaviour
 
     public void LockFret()
     {
-        
+
         Fret.GetComponent<Rigidbody>().isKinematic = true;
         Fret.GetComponent<MeshRenderer>().material = FretLockedMat;
 
         Debug.Log("Fret counter +1");
-        
+        M_FretCheck.Counter++;
         M_FretCheck.Remaining--;
-        M_FretCheck.Unload++;
         increment = false;
         CanvasLocked();
 
@@ -90,8 +91,7 @@ public class M_CollisionCounter : MonoBehaviour
         Debug.Log("Fret counter -1");
         M_FretCheck.Counter--;
         M_FretCheck.Remaining++;
-        
-
+        M_FretCheck.Unload--;
         increment = true;
         CanvasUnlocked();
 
@@ -99,11 +99,11 @@ public class M_CollisionCounter : MonoBehaviour
     }
     public void UndoCheck()
     {
-        
-        
-       
+
+
+
     }
 
 
-    
+
 }
