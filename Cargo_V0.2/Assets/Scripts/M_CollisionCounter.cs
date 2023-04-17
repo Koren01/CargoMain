@@ -76,6 +76,7 @@ public class M_CollisionCounter : MonoBehaviour
         
         M_FretCheck.Remaining--;
         M_FretCheck.Unload++;
+        M_FretCheck.Counter++;
         increment = false;
         CanvasLocked();
 

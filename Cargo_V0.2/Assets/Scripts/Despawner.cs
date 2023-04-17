@@ -22,6 +22,7 @@ public class Despawner : MonoBehaviour
         if (other.tag == "Fret") {
             Debug.Log("contact");
             //Destroy(other.gameObject);
+            //teleport because destroy will break the conveyor belt for some reason
             other.gameObject.transform.position = Transform.transform.position;
             M_FretCheck.Counter2++;
             M_FretCheck.Unload--;

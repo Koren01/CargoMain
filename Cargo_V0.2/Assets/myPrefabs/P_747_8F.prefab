@@ -327,6 +327,7 @@ GameObject:
   - component: {fileID: 6706408429412453773}
   - component: {fileID: 8598921312974159831}
   - component: {fileID: 5873328492667018373}
+  - component: {fileID: 5201692341495952138}
   m_Layer: 0
   m_Name: SM_Door_HigherDeck_LOD0
   m_TagString: Untagged
@@ -400,6 +401,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &5201692341495952138
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199554391785900518}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 23058cfe0c3cdcf4fad70f5e5f85f911, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &301449949498787053
 GameObject:
   m_ObjectHideFlags: 0
