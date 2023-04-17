@@ -74,9 +74,8 @@ public class M_LockedFret : MonoBehaviour
         Fret.GetComponent<Rigidbody>().isKinematic = true;
         Fret.GetComponent<MeshRenderer>().material = FretLockedMat;
 
-        Debug.Log("Fret counter +1");
-        M_FretCheck.Counter++;
         M_FretCheck.Remaining--;
+
         increment = false;
         CanvasLocked();
 
@@ -88,10 +87,7 @@ public class M_LockedFret : MonoBehaviour
         Fret.GetComponent<MeshRenderer>().material = baseMat;
         Fret.GetComponent<Rigidbody>().isKinematic = false;
 
-        Debug.Log("Fret counter -1");
-        M_FretCheck.Counter--;
         M_FretCheck.Remaining++;
-        M_FretCheck.Unload--;
         increment = true;
         CanvasUnlocked();
 

@@ -30,7 +30,7 @@ public class M_FretCheck : MonoBehaviour
     }
 
     void Update()
-    {
+    {   
         if (reverse== true)
         {
             if (UldsLeftMonitor)

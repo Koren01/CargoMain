@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Despawner : MonoBehaviour
 {
+    public GameObject Transform;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,9 +21,10 @@ public class Despawner : MonoBehaviour
     {
         if (other.tag == "Fret") {
             Debug.Log("contact");
-            Destroy(other.gameObject);
-            M_FretCheck.Unload--;
+            //Destroy(other.gameObject);
+            other.gameObject.transform.position = Transform.transform.position;
             M_FretCheck.Counter2++;
+            M_FretCheck.Unload--;
         }
     }
 }
