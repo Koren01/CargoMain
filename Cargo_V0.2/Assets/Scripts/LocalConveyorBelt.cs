@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ConveyorBelt : MonoBehaviour
+public class LocalConveyorBelt : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float rotateSpeed;
@@ -16,43 +16,39 @@ public class ConveyorBelt : MonoBehaviour
     private bool rotateLeft;
 
     public static bool rotateOK = false;
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        
-        
-            for (int i = 0; i <= onBelt.Count - 1; i++)
+
+
+        for (int i = 0; i <= onBelt.Count - 1; i++)
+        {
+            if (move == true)
             {
-                if (move == true)
-                {
-                    onBelt[i].GetComponent<Rigidbody>().velocity = goBack * speed * direction * Time.deltaTime;
-
-                }
-                if(rotateOK == true)
-                {
-                    if (rotateRight == true)
-                    {
-                        onBelt[i].transform.Rotate(rotateSpeed * Time.deltaTime * rotationRight);
-
-                    }
-                    if (rotateLeft == true)
-                    {
-                        onBelt[i].transform.Rotate(rotateSpeed * Time.deltaTime * rotationLeft);
-
-                    }
-                }
-
-                
-
+                onBelt[i].GetComponent<Rigidbody>().velocity = goBack * speed * direction * Time.deltaTime;
 
             }
-        
+            if (rotateOK == true)
+            {
+                if (rotateRight == true)
+                {
+                    onBelt[i].transform.Rotate(rotateSpeed * Time.deltaTime * rotationRight);
+
+                }
+                if (rotateLeft == true)
+                {
+                    onBelt[i].transform.Rotate(rotateSpeed * Time.deltaTime * rotationLeft);
+
+                }
+            }
+
+
+
+
+        }
+
 
 
 
@@ -79,10 +75,10 @@ public class ConveyorBelt : MonoBehaviour
         rotateLeft = false;
         rotateRight = false;
     }
-    
-    
 
-    public void StartBelt()
+
+
+    public void StartBeltLocal()
     {
         goBack = 1;
         move = true;
@@ -90,7 +86,7 @@ public class ConveyorBelt : MonoBehaviour
         return;
     }
 
-    public void StopBelt()
+    public void StopBeltLocal()
     {
         move = false;
         Debug.Log("Stop");
@@ -98,7 +94,7 @@ public class ConveyorBelt : MonoBehaviour
         return;
     }
 
-    public void BackBelt()
+    public void BackBeltLocal()
     {
         goBack = -1;
         move = true;
@@ -106,17 +102,30 @@ public class ConveyorBelt : MonoBehaviour
 
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider other)
     {
-        onBelt.Add(collision.gameObject);
+        onBelt.Add(other.gameObject);
         Debug.Log("touche");
     }
 
-    public void OnCollisionExit(Collision collision)
+    public void OnTriggerExit(Collider other)
     {
-        onBelt.Remove(collision.gameObject);
+        onBelt.Remove(other.gameObject);
         Debug.Log("touche plus");
-
-
     }
+
+
+    //public void OnCollisionEnter(Collision collision) {}
+    
+       // onBelt.Add(collision.gameObject);
+        //Debug.Log("touche");
+    
+
+    //public void OnCollisionExit(Collision collision) {}
+    
+       // onBelt.Remove(collision.gameObject);
+       // Debug.Log("touche plus");
+
+
+    
 }
