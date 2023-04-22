@@ -5,21 +5,14 @@ using UnityEngine;
 public class ConveyorBelt : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private float rotateSpeed;
     [SerializeField] public Vector3 direction;
-    [SerializeField] public Vector3 rotationRight;
-    [SerializeField] public Vector3 rotationLeft;
     [SerializeField] private List<GameObject> onBelt;
     [SerializeField] private bool move = false;
     [SerializeField] private int goBack = 1;
-    private bool rotateRight;
-    private bool rotateLeft;
 
-    public static bool rotateOK = false;
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -34,22 +27,6 @@ public class ConveyorBelt : MonoBehaviour
                     onBelt[i].GetComponent<Rigidbody>().velocity = goBack * speed * direction * Time.deltaTime;
 
                 }
-                if(rotateOK == true)
-                {
-                    if (rotateRight == true)
-                    {
-                        onBelt[i].transform.Rotate(rotateSpeed * Time.deltaTime * rotationRight);
-
-                    }
-                    if (rotateLeft == true)
-                    {
-                        onBelt[i].transform.Rotate(rotateSpeed * Time.deltaTime * rotationLeft);
-
-                    }
-                }
-
-                
-
 
             }
         
@@ -61,24 +38,7 @@ public class ConveyorBelt : MonoBehaviour
 
     }
 
-    public void RotateRight()
-    {
-        rotateRight = true;
-        rotateLeft = false;
-        return;
-    }
-    public void RotateLeft()
-    {
-        rotateLeft = true;
-        rotateRight = false;
-        return;
-    }
-
-    public void RotateNull()
-    {
-        rotateLeft = false;
-        rotateRight = false;
-    }
+    
     
     
 
